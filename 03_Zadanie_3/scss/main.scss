@@ -1,0 +1,28 @@
+/*Stwórz mapę z 2 różnymi szerokościami, np.
+
+$map: (
+  min-width: 200px,
+  max-width: 1000px
+);
+
+background-color: list.nth($colors, 1);
+width: map.get($sizes, big);
+
+Następnie za pomocą odpowiedniej funkcji stwórz listę wartości z tej mapy.
+Pamiętaj, że funkcje w Sass zawsze zwracają wynik operacji.
+Przypisz do zmiennej wynik odpowiedniej funkcji.
+Następnie ustaw pierwszy element nowo stworzonej listy jako szerokość elementów o klasie menu.
+*/
+@use "sass:map";
+@use "sass:list";
+
+$map: (
+	min-width: 200px,
+	max-width: 1000px,
+);
+
+$values: map-values($map);
+
+.menu {
+	width: list.nth($values, 1);
+}
